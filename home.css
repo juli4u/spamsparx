@@ -156,3 +156,119 @@ body {
 .menu-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Take full viewport height */
+    padding: 90px 20px 20px 20px; /* Top padding to clear navbar, other padding for content */
+    color: #ffffff; /* White text for hero */
+}
+
+.main-section-heading {
+    font-family: 'Exo', sans-serif;
+    font-size: 3.5rem; /* Adjust size as needed */
+    font-weight: 700; /* Bold */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.main-section-subheading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem; /* Adjust size as needed */
+    max-width: 650px; /* Limit width for readability */
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    color: #e0e0e0; /* Slightly softer white */
+}
+
+.main-section-button {
+    display: inline-block;
+    font-family: 'Exo', sans-serif;
+    background-color: #3382b0;
+    color: #ffffff;
+    padding: 14px 35px; /* Adjust padding for size */
+    text-decoration: none;
+    border-radius: 25px; /* Rounded corners like the image */
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.main-section-button:hover {
+    background-color: #2a7097; /* Darker shade for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.main-section-button:active {
+    transform: translateY(0px); /* Press down effect */
+}
+
+
+body.mobile-view .navbar {
+    height: 60px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+body.mobile-view .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px; 
+    left: 0;
+    padding-bottom: 1rem;
+    background-color: rgba(30, 60, 72, 0.95); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+body.mobile-view .nav-menu.active { 
+    display: flex;
+}
+
+body.mobile-view .nav-menu li {
+    margin: 0;
+    width: 100%;
+}
+
+body.mobile-view .nav-menu .nav-link {
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+    border-radius: 0;
+}
+
+body.mobile-view .menu-toggle {
+    display: block;
+}
+
+
+body.mobile-view .main-section {
+    padding-top: 80px; 
+    min-height: calc(100vh - 60px);
+}
+
+body.mobile-view .main-section-heading {
+    font-size: 2.2rem; 
+}
+
+body.mobile-view .main-section-subheading {
+    font-size: 1rem; 
+    max-width: 90%;
+}
+
+body.mobile-view .main-section-button {
+    font-size: 1rem;
+    padding: 12px 30px; 
+}
+
+
