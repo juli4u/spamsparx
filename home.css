@@ -231,7 +231,9 @@ body.mobile-view .navbar {
 }
 
 body.mobile-view .navbar-container {
-    /* If you need to adjust the container itself on mobile, do it here */
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 body.mobile-view .logo-link {
