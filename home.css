@@ -12,7 +12,7 @@ body {
     background-attachment: fixed;
 }
 
-/* --- NAVBAR GENERAL STYLES --- */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -50,7 +50,7 @@ body {
     margin-bottom: 2px;
 }
 
-.nav-menu { /* Desktop: visible, row layout */
+.nav-menu { 
     list-style: none;
     display: flex;
     align-items: center;
@@ -74,13 +74,13 @@ body {
     color: #3382b0;
 }
 
-.menu-toggle { /* Desktop: hidden */
+.menu-toggle { 
     display: none;
     cursor: pointer;
     background: none;
     border: none;
     padding: 0.5rem;
-    z-index: 1001; /* Ensure it's above other nav items if it overlaps */
+    z-index: 1001; 
 }
 
 .menu-toggle .bar {
@@ -92,7 +92,7 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger animation */
+
 .menu-toggle.is-active .bar:nth-child(2) {
     opacity: 0;
 }
@@ -103,7 +103,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- MAIN SECTION --- */
+
 .main-section {
     display: flex;
     flex-direction: column;
@@ -111,7 +111,7 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    padding: 90px 20px 20px 20px; /* 70px navbar height + 20px buffer */
+    padding: 90px 20px 20px 20px;
     color: #ffffff;
 }
 
@@ -156,10 +156,10 @@ body {
     transform: translateY(0px);
 }
 
-/* --- AWARENESS SECTION --- */
+
 .awareness-section {
     padding: 60px 20px;
-    background-color: rgba(0,0,0,0.1); /* Slight transparency */
+    background-color: rgba(0,0,0,0.1); 
 }
 
 .section-heading {
@@ -173,9 +173,9 @@ body {
 
 .awareness-cards-container {
     display: flex;
-    justify-content: space-around; /* Distributes space between and around items */
-    align-items: stretch; /* Makes cards same height if content differs */
-    flex-wrap: wrap;      /* Allows cards to wrap to next line */
+    justify-content: space-around; 
+    align-items: stretch; 
+    flex-wrap: wrap;      
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -190,8 +190,8 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex-basis: calc(33.333% - 20px); /* For 3 cards per row, (gap * (items_per_row - 1) / items_per_row) = 30px * 2 / 3 = 20px */
-    min-width: 280px; /* Prevents cards from becoming too narrow before wrapping */
+    flex-basis: calc(33.333% - 20px);
+    min-width: 280px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -222,9 +222,7 @@ body {
 }
 
 
-/* --- STYLES FOR MOBILE VIEW (when body.mobile-view is active) --- */
 
-/* Mobile Navbar Adjustments */
 body.mobile-view .navbar {
     height: 60px; 
     padding-top: 0.3rem; 
@@ -245,49 +243,49 @@ body.mobile-view .logo-icon {
 }
 
 body.mobile-view .menu-toggle {
-    display: block; /* Show hamburger icon */
+    display: block; 
 }
 
-body.mobile-view .nav-menu { /* Mobile: hidden by default, column layout, full width */
-    display: none; /* Hidden until .active is added by JS */
+body.mobile-view .nav-menu { 
+    display: none; 
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 60px; /* Position below the 60px mobile navbar */
+    top: 60px; 
     left: 0;
-    background-color: rgba(30, 60, 72, 0.95); /* Darker, more opaque background for dropdown */
+    background-color: rgba(30, 60, 72, 0.95); 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 1rem; /* Space at the bottom of the menu */
-    z-index: 999; /* Ensure it's below navbar but above content if needed */
+    padding-bottom: 1rem; 
+    z-index: 999; 
 }
 
 body.mobile-view .nav-menu.active {
-    display: flex; /* Show menu when toggled */
+    display: flex; 
 }
 
 body.mobile-view .nav-menu li {
-    margin: 0; /* Remove left margin from desktop */
+    margin: 0; 
     width: 100%;
 }
 
 body.mobile-view .nav-menu .nav-link {
     padding: 1rem;
-    display: block; /* Make links take full width */
+    display: block; 
     text-align: center;
     width: 100%;
-    border-radius: 0; /* Remove border-radius from desktop buttons */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Optional: separator lines */
+    border-radius: 0; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 body.mobile-view .nav-menu li:last-child .nav-link {
     border-bottom: none;
 }
 
 
-/* Mobile Main Section Adjustments */
+
 body.mobile-view .main-section {
-    padding-top: 80px; /* Navbar height (60px) + 20px buffer */
+    padding-top: 80px; 
     min-height: calc(100vh - 60px); 
 }
 
@@ -305,27 +303,27 @@ body.mobile-view .main-section-button {
     padding: 12px 30px;
 }
 
-/* Mobile Awareness Section Adjustments */
-body.mobile-view .section-heading { /* Heading for awareness section */
+
+body.mobile-view .section-heading { 
     font-size: 2rem;
     margin-bottom: 30px;
 }
 
 body.mobile-view .awareness-cards-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center;    /* Center the stacked cards */
-    gap: 25px;              /* Adjust gap for vertical stacking */
+    flex-direction: column; 
+    align-items: center;    
+    gap: 25px;              
 }
 
 body.mobile-view .awareness-card {
-    flex-basis: auto;       /* Reset desktop flex-basis */
-    width: 90%;             /* Make cards take most of the width */
-    max-width: 400px;       /* But not too wide */
+    flex-basis: auto;      
+    width: 90%;             
+    max-width: 400px;       
     padding: 25px 20px;
 }
 
 body.mobile-view .awareness-card:hover {
-    transform: translateY(-5px); /* Slightly less hover effect on mobile */
+    transform: translateY(-5px); 
 }
 
 body.mobile-view .card-icon {
