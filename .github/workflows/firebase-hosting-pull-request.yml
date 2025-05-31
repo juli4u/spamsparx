@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+      - name: Install dependencies and Deploy Functions # Corrected indentation for 'run' block
+        run: |
+          cd functions # Navigate into the functions directory
+          npm ci       # Run clean install from there
+          npm run deploy # Run the deploy script from your package.json
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
