@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Exo 2", sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     background: linear-gradient(to bottom, #0f2027 5%, #2c5364 50%, #f9d423 100%);
     min-height: 100vh;
@@ -160,4 +160,82 @@ body.mobile-view .nav-menu .nav-link {
 }
 body.mobile-view .nav-menu li:last-child .nav-link {
     border-bottom: none;
+}
+
+.about-page-container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(70px + 30px);
+    margin-bottom: 40px; 
+    padding: 30px 40px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 2.8rem;
+    color: #3382b0;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+
+
+.passion-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+    align-items: flex-start;
+}
+
+.image-container {
+    flex: 1 1 300px; 
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    max-width: 400px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+
+.text-column-with-heading {
+    flex: 2 1 350px; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+
+.text-column-with-heading h2 { 
+    font-family: "Exo 2", sans-serif;
+    font-size: 2.2rem;
+    color: #3382b0;
+    margin-bottom: 20px; 
+    text-align: left;
+}
+
+
+.text-container p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.text-container p:last-child {
+    margin-bottom: 0;
 }
