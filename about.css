@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Exo 2", sans-serif;
     line-height: 1.6;
     background: linear-gradient(to bottom, #0f2027 5%, #2c5364 50%, #f9d423 100%);
     min-height: 100vh;
@@ -238,4 +238,65 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 
 .text-container p:last-child {
     margin-bottom: 0;
+}
+
+.vision-mission-section {
+    background-color: #1d4c56;
+    color: #ffffff; 
+    padding: 50px 30px; 
+    border-radius: 25px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); 
+    max-width: 950px; 
+    margin: 60px auto; 
+    text-align: center; 
+}
+
+.vision-mission-section h2 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 2.6rem; 
+    font-weight: 700;
+    margin-bottom: 50px; 
+}
+
+
+.mission-items-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;       
+    justify-content: center; 
+}
+
+.mission-item {
+    flex: 0 1 275px; 
+    flex-grow: 0; 
+    flex-shrink: 1; 
+    flex-basis: 275px;
+    text-align: center;
+    padding: 20px; 
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.mission-item:hover {
+    transform: translateY(-8px);
+}
+
+.mission-item img {
+    max-width: 90px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.mission-item h3 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.mission-item p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
 }
