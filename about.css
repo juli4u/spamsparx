@@ -300,3 +300,177 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     line-height: 1.6;
     color: #e0e0e0;
 }
+
+.site-footer {
+    background-color: #1d4c56; 
+    color: #e0e0e0; 
+    padding: 50px 20px 30px 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-content-wrapper {
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-about {
+    flex: 0 1 400px; 
+}
+
+.footer-logo-link {
+    display: flex;
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none;
+    color: #ffffff; 
+    margin-bottom: 15px;
+}
+
+.footer-logo-icon {
+    height: 50px; 
+    width: auto;
+}
+
+.footer-logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-name {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.8rem; 
+    font-weight: 700;
+    color: #ffffff; 
+    margin: 0;
+    line-height: 1.1;
+}
+
+.footer-logo-sparkle {
+    font-family: "Exo 2", sans-serif;
+    color: #f9d423; 
+    font-size: 1.5rem; 
+    line-height: 1;
+    margin-top: -3px; 
+}
+
+.footer-description {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #c0c0c0; 
+}
+
+.footer-nav {
+    flex: 1 1 auto; 
+    display: flex;
+    justify-content: flex-end; 
+    padding-top: 5px; 
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.footer-nav-list li {
+    margin-bottom: 12px; 
+}
+
+.footer-nav-list li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-nav-link {
+    font-family: "Exo 2", sans-serif;
+    text-decoration: none;
+    color: #e0e0e0;    
+    font-size: 0.95rem; 
+    font-weight: 500;   
+    transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: #3382b0; 
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    margin: 25px 0;
+}
+
+.footer-copyright {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #b0b0b0; 
+}
+
+
+body.mobile-view .site-footer {
+    padding: 40px 15px 25px 15px;
+}
+
+body.mobile-view .footer-main-content {
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;    
+    gap: 30px;             
+}
+
+body.mobile-view .footer-about {
+    flex-basis: auto; 
+    width: 100%;      
+    max-width: 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+body.mobile-view .footer-logo-link {
+    flex-direction: column; 
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+body.mobile-view .footer-logo-text-group {
+    align-items: center;
+} 
+
+body.mobile-view .footer-description {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+body.mobile-view .footer-nav {
+    width: 100%; 
+    justify-content: center; 
+    padding-top: 0; 
+}
+
+body.mobile-view .footer-nav-list {
+    align-items: center; 
+}
+
+body.mobile-view .footer-nav-link {
+    font-size: 0.9rem;
+    padding: 6px 0; 
+}
+
+body.mobile-view .footer-copyright {
+    font-size: 0.8rem;
+}
