@@ -33,10 +33,39 @@
             </div>
         </nav>
     </header>
-    <header class="page-intro">
+    <main class="checker-page-container">
+        <header class="page-main-header">
             <h1>Check Email Safety</h1>
             <p>Enter an email address below to assess its potential risk using our AI tool. Plus, discover helpful tips to identify phishing attempts yourself.</p>
         </header>
+
+        <div class="checker-and-tips-wrapper">
+            <!-- Email Spam Checker Box -->
+            <section class="tool-box email-checker-box">
+                <h2>Email Spam Checker</h2>
+                <p>Enter an email address to check if it's likely associated with spam.</p>
+                <form id="emailCheckerForm">
+                    <input type="email" id="emailInput" placeholder="eg. suspicious.sender@example.com" required>
+                    <button type="submit" id="checkEmailBtn">Check Email</button>
+                </form>
+                <div id="emailCheckResult" class="result-display">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+
+            <!-- Phishing Awareness Tip Box -->
+            <aside class="tool-box phishing-tips-box">
+                <h2>Phishing Awareness Tip</h2>
+                <p class="tip-intro">Learn how to spot suspicious emails.</p>
+                <div class="tip-content">
+                    <h3 id="tipTitle"></h3>
+                    <p id="tipDescription"></p>
+                </div>
+                <button id="nextTipBtn">Next Tip</button>
+            </aside>
+        </div>
+    </main>
+
     <script src="spamchecker.js"></script>
 </body>
 </html>

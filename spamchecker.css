@@ -10,6 +10,7 @@ body {
     background: linear-gradient(to bottom, #0f2027 5%, #2c5364 50%, #f9d423 100%);
     min-height: 100vh;
     background-attachment: fixed;
+    margin-top: 130px;
 }
 
 
@@ -160,4 +161,171 @@ body.mobile-view .nav-menu .nav-link {
 }
 body.mobile-view .nav-menu li:last-child .nav-link {
     border-bottom: none;
+}
+.checker-page-container {
+    max-width: 1100px; /* Max width for the entire content area */
+    margin: 40px auto; /* Center with some top/bottom margin (adjust if you have a fixed navbar) */
+    /* If you have a fixed navbar 70px high: margin-top: calc(70px + 40px); */
+}
+
+.page-main-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-main-header h1 {
+    font-family: 'Exo', sans-serif;
+    font-size: 2.8rem;
+    color: #3382b0; /* Specified color */
+    margin-bottom: 15px;
+}
+
+.page-main-header p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff; /* Specified color */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checker-and-tips-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Key for responsiveness */
+    gap: 30px; /* Space between the two boxes */
+    justify-content: center; /* Center boxes if they don't fill width */
+}
+
+.tool-box {
+    background-color: #1d4c56; /* Dark teal background from previous designs */
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex: 1 1 400px; /* Grow, shrink, basis (adjust basis as needed) */
+    min-width: 300px; /* Prevent from getting too small before wrapping */
+    display: flex;
+    flex-direction: column; /* Stack content vertically within boxes */
+}
+
+.tool-box h2 {
+    font-family: 'Exo', sans-serif;
+    font-size: 1.8rem;
+    color: #3382b0; /* Specified color */
+    margin-bottom: 10px;
+}
+
+.tool-box p {
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0; /* Slightly off-white for text */
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Email Checker Specifics */
+.email-checker-box #emailInput {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #4a7c85; /* Subtle border */
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for input */
+    color: #2c3e50; /* Dark text color for input text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.email-checker-box #emailInput::placeholder {
+    color: #888; /* Placeholder text color */
+    font-family: 'Roboto', sans-serif;
+}
+
+.email-checker-box button[type="submit"],
+.phishing-tips-box #nextTipBtn {
+    background-color: #3382b0; /* Button color */
+    color: #ffffff;
+    font-family: 'Exo', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the left within the form/box */
+}
+.email-checker-box #checkEmailBtn {
+    width: auto; /* Don't make it full width */
+}
+
+
+.email-checker-box button[type="submit"]:hover,
+.phishing-tips-box #nextTipBtn:hover {
+    background-color: #286a8f; /* Darker shade on hover */
+}
+
+.result-display {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+}
+.result-display.safe {
+    background-color: rgba(46, 204, 113, 0.2); /* Light green */
+    color: #2ecc71; /* Green text */
+    border: 1px solid #2ecc71;
+}
+.result-display.unsafe {
+    background-color: rgba(231, 76, 60, 0.2); /* Light red */
+    color: #e74c3c; /* Red text */
+    border: 1px solid #e74c3c;
+}
+.result-display.error {
+    background-color: rgba(243, 156, 18, 0.2); /* Light orange */
+    color: #f39c12; /* Orange text */
+    border: 1px solid #f39c12;
+}
+.result-display.loading {
+    color: #bdc3c7;
+    background-color: rgba(100,100,100,0.1);
+    border: 1px solid #bdc3c7;
+}
+
+
+/* Phishing Tips Specifics */
+.phishing-tips-box .tip-intro {
+    font-size: 0.9rem;
+    color: #bdc3c7; /* Lighter text for intro */
+    margin-bottom: 15px;
+}
+
+.phishing-tips-box .tip-content {
+    background-color: rgba(0,0,0, 0.15); /* Slightly darker box for the tip itself */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Allow tip content to take available vertical space */
+    display: flex;
+    flex-direction: column;
+}
+
+.phishing-tips-box .tip-content h3 {
+    font-family: 'Exo', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.phishing-tips-box .tip-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+    margin-bottom: 0; /* Remove bottom margin from last p in tip */
+}
+
+.phishing-tips-box #nextTipBtn {
+    align-self: flex-start; 
+    margin-top: auto; 
 }
