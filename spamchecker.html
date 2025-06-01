@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spam Checker</title>
+    <link rel="stylesheet" href="spamchecker.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="spamsparx.png">
 </head>
 <body>
-    
+    <header class="site-header">
+        <nav class="navbar" id="navbar">
+            <div class="navbar-container">
+                <a href="home.html" class="logo-link">
+                    <img src="spamsparx.png" alt="Spamsparx Icon" class="logo-icon">
+                </a>
+
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="spamchecker.html" class="nav-link">Spam Checker</a></li>
+                    <li><a href="cybernews.html" class="nav-link">Cyber News</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <header class="page-intro">
+            <h1>Check Email Safety</h1>
+            <p>Enter an email address below to assess its potential risk using our AI tool. Plus, discover helpful tips to identify phishing attempts yourself.</p>
+        </header>
+    <script src="spamchecker.js"></script>
 </body>
 </html>
