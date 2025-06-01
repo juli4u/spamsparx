@@ -376,58 +376,56 @@ body.mobile-view .card-body-text {
     display: block; 
 }
 
-/* --- WHAT WE OFFER SECTION --- */
 .offer-section {
-    padding: 80px 20px; /* Add some spacing around the section */
-    /* background-color: rgba(0,0,0,0.05); /* Optional: slight tint to separate from pure gradient */
+    padding: 80px 20px; 
 }
 
 .offer-container {
-    max-width: 1100px; /* Control overall width */
-    margin: 0 auto;    /* Center the container */
-    background-color: #1d4c56; /* Backdrop color as requested */
-    border-radius: 20px; /* Rounded corners for the container */
-    padding: 40px 50px;   /* Internal padding */
+    max-width: 1100px; 
+    margin: 0 auto;    
+    background-color: #1d4c56; 
+    border-radius: 20px; 
+    padding: 40px 50px;   
     display: flex;
-    align-items: center; /* Vertically align items if they have different heights */
-    gap: 40px;          /* Space between text and image columns */
-    color: #e0e0e0;     /* Default text color for this section */
+    align-items: center; 
+    gap: 40px;          
+    color: #e0e0e0;     
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .offer-text-content {
-    flex: 1 1 55%; /* Allow text content to take a bit more space */
+    flex: 1 1 55%; 
 }
 
 .offer-heading {
     font-family: "Exo 2", sans-serif;
-    font-size: 2.6rem; /* Adjust as needed */
+    font-size: 2.6rem; 
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 30px;
 }
 
 .offer-list {
-    list-style: disc; /* Use bullets as in the image */
-    padding-left: 25px; /* Indent list items with bullets */
+    list-style: disc; 
+    padding-left: 25px; 
     margin-bottom: 35px;
 }
 
 .offer-list li {
     font-family: "Roboto", sans-serif;
-    font-size: 1rem;   /* Adjust as needed */
+    font-size: 1rem;   
     line-height: 1.7;
     margin-bottom: 15px;
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0; 
 }
 
 .offer-list li strong {
-    font-weight: 600; /* Or 700 if you prefer bolder */
-    color: #ffffff; /* Make the bolded part stand out slightly more, or use a highlight color */
+    font-weight: 600; 
+    color: #ffffff; 
 }
 
 .offer-image-content {
-    flex: 1 1 45%; /* Image takes up the remaining space */
+    flex: 1 1 45%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -436,62 +434,56 @@ body.mobile-view .card-body-text {
 .offer-image {
     max-width: 100%;
     height: auto;
-    border-radius: 15px; /* Rounded corners for the image itself */
-    object-fit: cover; /* Ensures image covers the area, might crop if aspect ratios differ */
+    border-radius: 15px; 
+    object-fit: cover; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Simple hover animation for the image */
 .offer-image-content:hover .offer-image {
     transform: scale(1.03);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* The button will inherit .main-section-button styles.
-   You can add .offer-button specifics here if needed, e.g.: */
 .offer-button {
     margin-top: 10px; 
 }
-
-
-/* --- Add these to your body.mobile-view styles --- */
 
 body.mobile-view .offer-section {
     padding: 40px 15px;
 }
 
 body.mobile-view .offer-container {
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column; 
     padding: 30px 25px;
     gap: 30px;
 }
 
 body.mobile-view .offer-text-content {
-    flex-basis: auto; /* Reset flex-basis */
-    order: 2; /* Text content below image on mobile, adjust if you want text first */
-    text-align: left; /* Or center if you prefer for mobile lists */
+    flex-basis: auto; 
+    order: 2; 
+    text-align: left; 
 }
 
 body.mobile-view .offer-image-content {
-    flex-basis: auto; /* Reset flex-basis */
-    order: 1; /* Image content above text on mobile */
-    width: 100%; /* Ensure image container takes full width */
-    margin-bottom: 10px; /* Space between image and text */
+    flex-basis: auto; 
+    order: 1; 
+    width: 100%; 
+    margin-bottom: 10px; 
 }
 body.mobile-view .offer-image {
-    max-width: 90%; /* Don't let image take full width to have some padding */
-    margin: 0 auto; /* Center the image */
+    max-width: 90%; 
+    margin: 0 auto; 
 }
 
 
 body.mobile-view .offer-heading {
     font-size: 2rem;
-    text-align: center; /* Center heading on mobile */
+    text-align: center; 
     margin-bottom: 20px;
 }
 
 body.mobile-view .offer-list {
-    padding-left: 20px; /* Adjust padding for mobile */
+    padding-left: 20px; 
     margin-bottom: 25px;
 }
 
@@ -500,9 +492,183 @@ body.mobile-view .offer-list li {
 }
 
 body.mobile-view .offer-button {
-    display: block; /* Make button take full width */
-    width: fit-content; /* Or a specific width */
-    margin: 0 auto; /* Center the button */
+    display: block; 
+    width: fit-content; 
+    margin: 0 auto; 
     padding: 12px 30px;
     font-size: 1rem;
+}
+
+.site-footer {
+    background-color: #1d4c56; 
+    color: #e0e0e0; 
+    padding: 50px 20px 30px 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-content-wrapper {
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-about {
+    flex: 0 1 400px; 
+}
+
+.footer-logo-link {
+    display: flex;
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none;
+    color: #ffffff; 
+    margin-bottom: 15px;
+}
+
+.footer-logo-icon {
+    height: 50px; 
+    width: auto;
+}
+
+.footer-logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-name {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.8rem; 
+    font-weight: 700;
+    color: #ffffff; 
+    margin: 0;
+    line-height: 1.1;
+}
+
+.footer-logo-sparkle {
+    font-family: "Exo 2", sans-serif;
+    color: #f9d423; 
+    font-size: 1.5rem; 
+    line-height: 1;
+    margin-top: -3px; 
+}
+
+.footer-description {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #c0c0c0; 
+}
+
+.footer-nav {
+    flex: 1 1 auto; 
+    display: flex;
+    justify-content: flex-end; 
+    padding-top: 5px; 
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.footer-nav-list li {
+    margin-bottom: 12px; 
+}
+
+.footer-nav-list li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-nav-link {
+    font-family: "Exo 2", sans-serif;
+    text-decoration: none;
+    color: #e0e0e0;    
+    font-size: 0.95rem; 
+    font-weight: 500;   
+    transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: #3382b0; 
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    margin: 25px 0;
+}
+
+.footer-copyright {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #b0b0b0; 
+}
+
+
+body.mobile-view .site-footer {
+    padding: 40px 15px 25px 15px;
+}
+
+body.mobile-view .footer-main-content {
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;    
+    gap: 30px;             
+}
+
+body.mobile-view .footer-about {
+    flex-basis: auto; 
+    width: 100%;      
+    max-width: 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+body.mobile-view .footer-logo-link {
+    flex-direction: column; 
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+body.mobile-view .footer-logo-text-group {
+    align-items: center;
+} 
+
+body.mobile-view .footer-description {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+body.mobile-view .footer-nav {
+    width: 100%; 
+    justify-content: center; 
+    padding-top: 0; 
+}
+
+body.mobile-view .footer-nav-list {
+    align-items: center; 
+}
+
+body.mobile-view .footer-nav-link {
+    font-size: 0.9rem;
+    padding: 6px 0; 
+}
+
+body.mobile-view .footer-copyright {
+    font-size: 0.8rem;
 }
