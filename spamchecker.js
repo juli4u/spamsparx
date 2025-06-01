@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // IMPORTANT: Replace with your actual Firebase Project ID and Region
     const YOUR_PROJECT_ID = 'scamsparx'; // Example, get yours from Firebase Console
-    const YOUR_REGION = 'eur3';    // Example, usually us-central1 for new projects
+    const YOUR_REGION = 'us-central1';    // Example, usually us-central1 for new projects
 
     const CLOUD_FUNCTION_URL_DEPLOYED = `https://${YOUR_REGION}-${YOUR_PROJECT_ID}.cloudfunctions.net/checkMailboxlayerEmail`;
     const CLOUD_FUNCTION_URL_LOCAL = `http://127.0.0.1:5001/${YOUR_PROJECT_ID}/${YOUR_REGION}/checkMailboxlayerEmail`; // Emulators often use 127.0.0.1
