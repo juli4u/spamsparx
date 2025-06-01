@@ -1,23 +1,26 @@
-const navbar = document.getElementById('navbar'); // The <nav> element
+// --- Navbar Responsive Logic ---
+const navbar = document.getElementById('navbar');
 const menuToggle = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
-const bodyElement = document.body; // Get the body element
-
-const MOBILE_BREAKPOINT = 768; // Define your breakpoint in pixels
+const bodyElement = document.body;
+const MOBILE_BREAKPOINT = 768;
 
 function switchToMobileView() {
-
     bodyElement.classList.add('mobile-view');
-    navMenu.classList.remove('active');
-    menuToggle.classList.remove('is-active');
-    menuToggle.setAttribute('aria-expanded', 'false');
+    if (navMenu) navMenu.classList.remove('active');
+    if (menuToggle) {
+        menuToggle.classList.remove('is-active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
 }
 
 function switchToDesktopView() {
     bodyElement.classList.remove('mobile-view');
-    navMenu.classList.remove('active');
-    menuToggle.classList.remove('is-active');
-    menuToggle.setAttribute('aria-expanded', 'false');
+    if (navMenu) navMenu.classList.remove('active');
+    if (menuToggle) {
+        menuToggle.classList.remove('is-active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
 }
 
 function checkScreenSize() {
@@ -28,19 +31,18 @@ function checkScreenSize() {
     }
 }
 
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        if (bodyElement.classList.contains('mobile-view')) {
+            menuToggle.classList.toggle('is-active');
+            if (navMenu) navMenu.classList.toggle('active');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+        }
+    });
+}
 
-menuToggle.addEventListener('click', () => {
-    if (bodyElement.classList.contains('mobile-view')) {
-        menuToggle.classList.toggle('is-active');
-        navMenu.classList.toggle('active'); 
-
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-    }
-});
-
-
-checkScreenSize();
+checkScreenSize(); // Initial check
 
 let resizeTimeout;
 window.addEventListener('resize', () => {
@@ -48,6 +50,8 @@ window.addEventListener('resize', () => {
     resizeTimeout = setTimeout(checkScreenSize, 200);
 });
 
+
+// --- DOMContentLoaded to ensure HTML is ready for other scripts ---
 document.addEventListener('DOMContentLoaded', () => {
     // --- Phishing Tips Functionality ---
     const tips = [
@@ -83,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextTipBtn = document.getElementById('nextTipBtn');
 
     function displayTip() {
-        if (tipTitleElement && tipDescriptionElement) {
+        if (tipTitleElement && tipDescriptionElement && tips.length > 0) {
             tipTitleElement.textContent = tips[currentTipIndex].title;
             tipDescriptionElement.textContent = tips[currentTipIndex].description;
         }
@@ -95,8 +99,88 @@ document.addEventListener('DOMContentLoaded', () => {
             displayTip();
         });
     }
+    displayTip(); // Display initial tip
 
-    // Display initial tip
-    displayTip();
 
+    // --- Email Spam Checker Functionality (FROM PREVIOUS ANSWERS) ---
+    const emailCheckerForm = document.getElementById('emailCheckerForm');
+    const emailInput = document.getElementById('emailInput');
+    const emailCheckResultDiv = document.getElementById('emailCheckResult');
+    const checkEmailBtn = document.getElementById('checkEmailBtn');
+
+    // IMPORTANT: Replace with your actual Firebase Project ID and Region
+    const YOUR_PROJECT_ID = 'scamsparx'; // Example, get yours from Firebase Console
+    const YOUR_REGION = 'eur3';    // Example, usually us-central1 for new projects
+
+    const CLOUD_FUNCTION_URL_DEPLOYED = `https://${YOUR_REGION}-${YOUR_PROJECT_ID}.cloudfunctions.net/checkMailboxlayerEmail`;
+    const CLOUD_FUNCTION_URL_LOCAL = `http://127.0.0.1:5001/${YOUR_PROJECT_ID}/${YOUR_REGION}/checkMailboxlayerEmail`; // Emulators often use 127.0.0.1
+
+    const IS_LOCAL_DEVELOPMENT = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const CHECK_EMAIL_API_ENDPOINT = IS_LOCAL_DEVELOPMENT ? CLOUD_FUNCTION_URL_LOCAL : CLOUD_FUNCTION_URL_DEPLOYED;
+
+    if (emailCheckerForm) {
+        emailCheckerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!email) {
+                displayEmailCheckResult('Please enter an email address.', 'error');
+                return;
+            }
+
+            displayEmailCheckResult('Checking email...', 'loading');
+            if(checkEmailBtn) checkEmailBtn.disabled = true;
+
+            try {
+                const response = await fetch(CHECK_EMAIL_API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email }),
+                });
+
+                if (!response.ok) {
+                    let errorMsg = `Server error: ${response.status}`;
+                    try {
+                        const errorData = await response.json();
+                        errorMsg = errorData.message || errorMsg;
+                    } catch (e) { /* Ignore parsing error, use status code */ }
+                    throw new Error(errorMsg);
+                }
+
+                const data = await response.json();
+                console.log('Response from Cloud Function (Mailboxlayer data):', data);
+
+                if (data.success === false) {
+                     displayEmailCheckResult(`API Error: ${data.error ? data.error.info : 'Unknown API error from Mailboxlayer.'}`, 'error');
+                } else if (data.smtp_check && data.score >= 0.65) { // Higher score, SMTP verified = likely safer
+                    let message = `Email appears to be SAFE (Deliverability Score: ${data.score.toFixed(2)}).`;
+                    if (data.disposable) message += " However, it's a DISPOSABLE email address, which can be risky.";
+                    if (data.free && !data.disposable) message += " It's a FREE email provider.";
+                    displayEmailCheckResult(message, 'safe');
+                } else if (data.disposable) {
+                    displayEmailCheckResult(`Email is from a DISPOSABLE provider. Potentially UNSAFE (Score: ${data.score.toFixed(2)}).`, 'unsafe');
+                } else if (!data.smtp_check) { // SMTP check failed
+                    displayEmailCheckResult(`Email server could not be verified (SMTP check failed). Use with caution (Score: ${data.score.toFixed(2)}).`, 'unsafe');
+                } else { // Lower score or other conditions
+                    displayEmailCheckResult(`Email might be RISKY or have deliverability issues (Score: ${data.score.toFixed(2)}).`, 'unsafe');
+                }
+
+            } catch (error) {
+                console.error('Error calling Cloud Function:', error);
+                displayEmailCheckResult(`Could not check email. ${error.message}`, 'error');
+            } finally {
+                if(checkEmailBtn) checkEmailBtn.disabled = false;
+            }
+        });
+    }
+
+    function displayEmailCheckResult(message, type) {
+        if (emailCheckResultDiv) {
+            emailCheckResultDiv.textContent = message;
+            emailCheckResultDiv.className = 'result-display ' + type; // Reset classes and add new type
+            emailCheckResultDiv.style.display = 'block';
+        }
+    }
 });
