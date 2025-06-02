@@ -11,31 +11,29 @@ const firebaseConfig = {
 };
 
 let app;
-let db; // Firestore database instance
+let db; 
 
 try {
     app = initializeApp(firebaseConfig);
-    db = getFirestore(app); // Pass the initialized app instance to getFirestore
+    db = getFirestore(app); 
     if (!db) {
         throw new Error("Firestore could not be initialized. Firebase app might not be ready or config is incorrect.");
     }
     console.log("Firebase and Firestore initialized successfully.");
 } catch (e) {
     console.error("CRITICAL: Error initializing Firebase or Firestore:", e);
-    // Display a user-facing error if initialization fails.
-    // You might want to select an element on your page to show this.
+
     const initErrorDiv = document.getElementById('newsletterMessage') || document.body; // Fallback to body
     initErrorDiv.innerHTML = `<p style="color: red; text-align: center; padding: 10px; border: 1px solid red; background-color: #ffe0e0;">
         Error: Could not connect to the subscription service. Please try again later or contact support.
     </p>`;
-    // Optionally disable the form
+    
     const tempSignUpBtn = document.getElementById('newsletterSignUpBtn');
     if (tempSignUpBtn) {
         tempSignUpBtn.textContent = 'Service Unavailable';
         tempSignUpBtn.disabled = true;
     }
-    // Stop script execution if Firebase fails to initialize
-    // throw e; // Or just let it proceed if you want other non-Firebase parts of the script to run
+
 }
 
 
@@ -45,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsletterMessageDiv = document.getElementById('newsletterMessage');
     const newsletterSignUpBtn = document.getElementById('newsletterSignUpBtn');
 
-    // If db failed to initialize earlier, the button might already be disabled
+
     if (!db && newsletterSignUpBtn) {
         newsletterSignUpBtn.textContent = 'Service Unavailable';
         newsletterSignUpBtn.disabled = true;
-        return; // Don't attach event listener if db is not available
+        return; 
     }
 
 
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const email = newsletterEmailInput.value.trim();
 
-            displayNewsletterMessage('', ''); // Clear previous messages
+            displayNewsletterMessage('', ''); 
 
             if (!email) {
                 displayNewsletterMessage('Please enter an email address.', 'error');

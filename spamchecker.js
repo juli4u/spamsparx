@@ -1,4 +1,4 @@
-// --- Navbar Responsive Logic ---
+
 const navbar = document.getElementById('navbar');
 const menuToggle = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
@@ -42,7 +42,7 @@ if (menuToggle) {
     });
 }
 
-checkScreenSize(); // Initial check
+checkScreenSize(); 
 
 let resizeTimeout;
 window.addEventListener('resize', () => {
@@ -97,18 +97,18 @@ document.addEventListener('DOMContentLoaded', () => {
             displayTip();
         });
     }
-    displayTip(); // Display initial tip
+    displayTip();
 
 
-    // --- Email Spam Checker Functionality (FROM PREVIOUS ANSWERS) ---
+
     const emailCheckerForm = document.getElementById('emailCheckerForm');
     const emailInput = document.getElementById('emailInput');
     const emailCheckResultDiv = document.getElementById('emailCheckResult');
     const checkEmailBtn = document.getElementById('checkEmailBtn');
 
-    // IMPORTANT: Replace with your actual Firebase Project ID and Region
-    const YOUR_PROJECT_ID = 'scamsparx'; // Example, get yours from Firebase Console
-    const YOUR_REGION = 'us-central1';    // Example, usually us-central1 for new projects
+
+    const YOUR_PROJECT_ID = 'scamsparx'; 
+    const YOUR_REGION = 'us-central1';    
 
     const CLOUD_FUNCTION_URL_DEPLOYED = `https://${YOUR_REGION}-${YOUR_PROJECT_ID}.cloudfunctions.net/checkMailboxlayerEmail`;
     const CLOUD_FUNCTION_URL_LOCAL = `http://127.0.0.1:5001/${YOUR_PROJECT_ID}/${YOUR_REGION}/checkMailboxlayerEmail`; // Emulators often use 127.0.0.1
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     try {
                         const errorData = await response.json();
                         errorMsg = errorData.message || errorMsg;
-                    } catch (e) { /* Ignore parsing error, use status code */ }
+                    } catch (e) { }
                     throw new Error(errorMsg);
                 }
 
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (data.success === false) {
                      displayEmailCheckResult(`API Error: ${data.error ? data.error.info : 'Unknown API error from Mailboxlayer.'}`, 'error');
-                } else if (data.smtp_check && data.score >= 0.65) { // Higher score, SMTP verified = likely safer
+                } else if (data.smtp_check && data.score >= 0.65) { 
                     let message = `Email appears to be SAFE (Deliverability Score: ${data.score.toFixed(2)}).`;
                     if (data.disposable) message += " However, it's a DISPOSABLE email address, which can be risky.";
                     if (data.free && !data.disposable) message += " It's a FREE email provider.";
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayEmailCheckResult(message, type) {
         if (emailCheckResultDiv) {
             emailCheckResultDiv.textContent = message;
-            emailCheckResultDiv.className = 'result-display ' + type; // Reset classes and add new type
+            emailCheckResultDiv.className = 'result-display ' + type; 
             emailCheckResultDiv.style.display = 'block';
         }
     }
