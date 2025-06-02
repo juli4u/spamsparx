@@ -367,6 +367,20 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     font-size: 0.9rem;
     line-height: 1.6;
     color: #c0c0c0; 
+    margin-bottom: 15px;
+}
+
+.footer-contact-email {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;   
+    color: #ffffff;       
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+.footer-contact-email:hover {
+    color: #3382b0; 
+    text-decoration: underline; 
 }
 
 .footer-nav {
@@ -454,6 +468,11 @@ body.mobile-view .footer-logo-text-group {
 body.mobile-view .footer-description {
     font-size: 0.85rem;
     margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+body.mobile-view .footer-contact {
+    font-size: 0.85rem; 
 }
 
 body.mobile-view .footer-nav {
