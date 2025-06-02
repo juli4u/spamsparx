@@ -329,12 +329,6 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     margin-top: auto; 
 }
 
-/* Ensure Google Fonts are linked in your HTML <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-*/
-
 .newsletter-signup-section {
     background-color: #1d4c56; /* Dark teal background as per image */
     color: #ffffff;
@@ -346,13 +340,9 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     text-align: center;
 }
 
-.newsletter-content-wrapper {
-    /* This div is mostly for semantic grouping if needed,
-       most centering/width is handled by the section itself. */
-}
 
 .newsletter-signup-section h2 {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo 2", sans-serif;
     color: #3382b0; /* Specified heading color */
     font-size: 2.4rem; /* Adjust as needed */
     font-weight: 700;
@@ -382,7 +372,7 @@ form.newsletter-form {
 }
 
 form.newsletter-form input[type="email"] {
-    font-family: 'Roboto', sans-serif; /* Specified font */
+    font-family: "Roboto", sans-serif; /* Specified font */
     /* Flex properties for responsive sizing: */
     flex: 2 1 280px; /* Grow more (2), can shrink (1), ideal basis width 280px */
     padding: 14px 18px;
@@ -397,7 +387,7 @@ form.newsletter-form input[type="email"] {
 
 form.newsletter-form input[type="email"]::placeholder {
     color: #888;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 form.newsletter-form input[type="email"]:focus {
@@ -407,10 +397,9 @@ form.newsletter-form input[type="email"]:focus {
 }
 
 form.newsletter-form button[type="submit"] {
-    font-family: 'Exo', sans-serif; /* Specified font */
-    /* Flex properties for responsive sizing: */
-    flex: 1 1 120px; /* Grow less (1), can shrink (1), ideal basis width 120px */
-    background-color: #3382b0; /* Matching button color */
+    font-family: "Exo 2", sans-serif;
+    flex: 1 1 120px; 
+    background-color: #3382b0; 
     color: #ffffff;
     font-weight: bold;
     border: none;
@@ -421,11 +410,11 @@ form.newsletter-form button[type="submit"] {
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     box-sizing: border-box;
-    white-space: nowrap; /* Prevent button text from wrapping too soon */
+    white-space: nowrap; 
 }
 
 form.newsletter-form button[type="submit"]:hover {
-    background-color: #286a8f; /* Darker shade on hover */
+    background-color: #286a8f; 
     transform: translateY(-1px);
 }
 
@@ -433,12 +422,12 @@ form.newsletter-form button[type="submit"]:hover {
     margin-top: 15px;
     padding: 10px 15px;
     border-radius: 6px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 0.95rem;
-    min-height: 20px; /* Prevent layout jump when message appears */
-    display: none; /* Hidden by default */
-    max-width: 550px; /* Match form width */
+    min-height: 20px; 
+    display: none; 
+    max-width: 550px; 
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -448,17 +437,17 @@ form.newsletter-form button[type="submit"]:hover {
     background-color: rgba(46, 204, 113, 0.15);
     color: #2ecc71;
     border: 1px solid rgba(46, 204, 113, 0.4);
-    /* display: block; /* JS will handle display */
+    display: block; 
 }
 
 .newsletter-message-display.error {
     background-color: rgba(231, 76, 60, 0.15);
     color: #e74c3c;
     border: 1px solid rgba(231, 76, 60, 0.4);
-    display: block; /* JS will handle display */
+    display: block;
 }
 
 .newsletter-message-display.loading {
-    color: #bdc3c7; /* Light gray for loading text */
-    display: block; /* JS will handle display */
+    color: #bdc3c7; 
+    display: block; 
 }
