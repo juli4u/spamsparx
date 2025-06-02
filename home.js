@@ -3,7 +3,7 @@ const menuToggle = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
 const bodyElement = document.body; // Get the body element
 
-const MOBILE_BREAKPOINT = 768; // Define your breakpoint in pixels
+const MOBILE_BREAKPOINT = 768; // Define breakpoint in pixels
 
 function switchToMobileView() {
 
