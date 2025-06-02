@@ -65,7 +65,21 @@
             </aside>
         </div>
     </main>
+    
+    <section class="newsletter-signup-section">
+        <div class="newsletter-content-wrapper">
+            <h2>Join Us in Making<br>the Internet Safer</h2>
+            <p>Subscribe to the Spamsparx Newsletter for expert insights, tips, and the latest in cybersecurity. Together, let's build a safer digital world.</p>
+        <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" name="email" placeholder="johndoe@gmail.com" required>
+            <button type="submit" id="newsletterSignUpBtn">Sign up</button>
+        </form>
+        <div id="newsletterMessage" class="newsletter-message-display" aria-live="polite">
+        </div>
+        </div>
+    </section>
 
     <script src="spamchecker.js"></script>
+    <script type="module" src="spamcheckersignup.js"></script>
 </body>
 </html>

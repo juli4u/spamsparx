@@ -51,9 +51,7 @@ window.addEventListener('resize', () => {
 });
 
 
-// --- DOMContentLoaded to ensure HTML is ready for other scripts ---
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Phishing Tips Functionality ---
     const tips = [
         {
             title: "Never Share Sensitive Information via Email",
@@ -184,3 +182,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+

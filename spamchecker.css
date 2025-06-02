@@ -163,9 +163,8 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     border-bottom: none;
 }
 .checker-page-container {
-    max-width: 1100px; /* Max width for the entire content area */
-    margin: 40px auto; /* Center with some top/bottom margin (adjust if you have a fixed navbar) */
-    /* If you have a fixed navbar 70px high: margin-top: calc(70px + 40px); */
+    max-width: 1100px; 
+    margin: 40px auto; 
 }
 
 .page-main-header {
@@ -174,16 +173,16 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 }
 
 .page-main-header h1 {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 2.8rem;
-    color: #3382b0; /* Specified color */
+    color: #3382b0; 
     margin-bottom: 15px;
 }
 
 .page-main-header p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.1rem;
-    color: #ffffff; /* Specified color */
+    color: #ffffff; 
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -191,7 +190,7 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 
 .checker-and-tips-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Key for responsiveness */
+    flex-wrap: wrap; 
     gap: 30px; /* Space between the two boxes */
     justify-content: center; /* Center boxes if they don't fill width */
 }
@@ -208,14 +207,14 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 }
 
 .tool-box h2 {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 1.8rem;
     color: #3382b0; /* Specified color */
     margin-bottom: 10px;
 }
 
 .tool-box p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #e0e0e0; /* Slightly off-white for text */
     margin-bottom: 20px;
     font-size: 0.95rem;
@@ -230,20 +229,20 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     border-radius: 8px;
     background-color: #ffffff; /* White background for input */
     color: #2c3e50; /* Dark text color for input text */
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
 }
 
 .email-checker-box #emailInput::placeholder {
     color: #888; /* Placeholder text color */
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .email-checker-box button[type="submit"],
 .phishing-tips-box #nextTipBtn {
     background-color: #3382b0; /* Button color */
     color: #ffffff;
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-weight: bold;
     border: none;
     padding: 12px 25px;
@@ -267,7 +266,7 @@ body.mobile-view .nav-menu li:last-child .nav-link {
     margin-top: 20px;
     padding: 15px;
     border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     display: none; /* Hidden by default */
 }
@@ -311,14 +310,14 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 }
 
 .phishing-tips-box .tip-content h3 {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 1.2rem;
     color: #ffffff;
     margin-bottom: 10px;
 }
 
 .phishing-tips-box .tip-content p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.9rem;
     color: #e0e0e0;
     line-height: 1.7;
@@ -328,4 +327,138 @@ body.mobile-view .nav-menu li:last-child .nav-link {
 .phishing-tips-box #nextTipBtn {
     align-self: flex-start; 
     margin-top: auto; 
+}
+
+/* Ensure Google Fonts are linked in your HTML <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+*/
+
+.newsletter-signup-section {
+    background-color: #1d4c56; /* Dark teal background as per image */
+    color: #ffffff;
+    padding: 50px 30px;     /* Padding inside the section */
+    margin: 40px auto;      /* Top/bottom margin, centered on page */
+    max-width: 800px;       /* Max width of the section */
+    border-radius: 25px;    /* Rounded corners for the section block */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+}
+
+.newsletter-content-wrapper {
+    /* This div is mostly for semantic grouping if needed,
+       most centering/width is handled by the section itself. */
+}
+
+.newsletter-signup-section h2 {
+    font-family: 'Exo', sans-serif;
+    color: #3382b0; /* Specified heading color */
+    font-size: 2.4rem; /* Adjust as needed */
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.newsletter-signup-section p {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; /* Specified text color */
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 550px; /* Constrain description width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;     /* Key for responsiveness: allows items to wrap */
+    gap: 15px;           /* Space between input and button */
+    justify-content: center; /* Center items on the line */
+    align-items: stretch; /* Make input and button same height if possible */
+    max-width: 550px;    /* Max width for the form (input+button group) */
+    margin: 0 auto 20px auto; /* Center the form and add bottom margin */
+}
+
+form.newsletter-form input[type="email"] {
+    font-family: 'Roboto', sans-serif; /* Specified font */
+    /* Flex properties for responsive sizing: */
+    flex: 2 1 280px; /* Grow more (2), can shrink (1), ideal basis width 280px */
+    padding: 14px 18px;
+    border: 1px solid #4a7c85; /* Subtle border */
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #2c3e50; /* Darker text for input field */
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Ensure padding/border don't expand element */
+}
+
+form.newsletter-form input[type="email"]::placeholder {
+    color: #888;
+    font-family: 'Roboto', sans-serif;
+}
+
+form.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: #3382b0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 0 3px rgba(51, 130, 176, 0.25);
+}
+
+form.newsletter-form button[type="submit"] {
+    font-family: 'Exo', sans-serif; /* Specified font */
+    /* Flex properties for responsive sizing: */
+    flex: 1 1 120px; /* Grow less (1), can shrink (1), ideal basis width 120px */
+    background-color: #3382b0; /* Matching button color */
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevent button text from wrapping too soon */
+}
+
+form.newsletter-form button[type="submit"]:hover {
+    background-color: #286a8f; /* Darker shade on hover */
+    transform: translateY(-1px);
+}
+
+.newsletter-message-display {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    min-height: 20px; /* Prevent layout jump when message appears */
+    display: none; /* Hidden by default */
+    max-width: 550px; /* Match form width */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.newsletter-message-display.success {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+    /* display: block; /* JS will handle display */
+}
+
+.newsletter-message-display.error {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.4);
+    display: block; /* JS will handle display */
+}
+
+.newsletter-message-display.loading {
+    color: #bdc3c7; /* Light gray for loading text */
+    display: block; /* JS will handle display */
 }
