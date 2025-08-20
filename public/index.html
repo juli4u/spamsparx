@@ -1,89 +1,119 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spamsparx</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="spamsparx.png">
+</head>
+<body>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.8.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <header class="site-header">
+        <nav class="navbar" id="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="logo-link">
+                    <img src="spamsparx.png" alt="Spamsparx Icon" class="logo-icon">
+                </a>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="spamchecker.html" class="nav-link">Spam Checker</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-section" id="mainsection">
+        <h1 class="main-section-heading">Welcome to Spamsparx</h1>
+        <p class="main-section-subheading">Spamsparx helps you identify and avoid malicious emails with our advanced checking tool and educational resources.</p>
+        <a href="spamchecker.html" class="main-section-button">Get started</a>
+    </main>
+     <section class="awareness-section">
+            <h2 class="section-heading">Why Phishing Awareness is important?</h2>
+            <div class="awareness-cards-container">
+                <div class="awareness-card">
+                    <img src="Databreach.png" alt="Data Breach Icon" class="card-icon"> 
+                    <h3 class="card-subheading">Data Breaches</h3>
+                    <p class="card-body-text">
+                        With phishing and social engineering being involved in 80% of data breaches, phishing is frequently the first phase of a cyberattack. Sensitive information may be exposed in a single phishing scam, with a serious legal and financial impact.
+                    </p>
+                </div>
+                <div class="awareness-card">
+                    <img src="financialloss.png" alt="Financial Loss Icon" class="card-icon">
+                    <h3 class="card-subheading">Financial losses</h3>
+                    <p class="card-body-text">
+                        Successful phishing attacks can result in financial losses through stolen funds, data breaches, and the cost of investigation and remediation. IBM reported an average cost of $4.91 million per data breach.
+                    </p>
+                </div>
+                <div class="awareness-card">
+                    <img src="Reputational Damage.png" alt="Reputational Damage Icon" class="card-icon"> 
+                    <h3 class="card-subheading">Reputational damage</h3>
+                    <p class="card-body-text">
+                        A phishing attack can damage an organization's reputation, leading to loss of customer trust and potential business losses.
+                    </p>
+                </div>
+            </div>
+        </section>
+     <section class="offer-section">
+        <div class="offer-container">
+            <div class="offer-text-content">
+                <h2 class="offer-heading">What we offer</h2>
+                <ul class="offer-list">
+                    <li><strong>Powerful Email Check:</strong> Instantly assess the potential risk of an email address.</li>
+                    <li><strong>Phishing Awareness Tips:</strong> Actionable advice to help you spot suspicious emails.</li>
+                    <li><strong>Informative Resources:</strong> Understand the common types of phishing attacks and how they work.</li>
+                </ul>
+                <a href="spamchecker.html" class="main-section-button offer-button">Get Started</a>
+            </div>
+            <div class="offer-image-content">
+                <img src="emailphishdetect.png" alt="Email Phishing" class="offer-image">
+            </div>
+        </div>
+    </section>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <footer class="site-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-main-content">
+                <div class="footer-about">
+                    <a href="home.html" class="footer-logo-link">
+                        <img src="spamsparx.png" alt="Spamsparx Icon" class="footer-logo-icon">
+                        <div class="footer-logo-text-group">
+                            <h3 class="footer-logo-name">Spamsparx</h3>
+                            <span class="footer-logo-sparkle">✶</span> 
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        You can quickly identify email dangers using SpamSparx.
+                        Stay smart and secure with protection driven by AI.
+                    </p>
+                    <p class="footer-contact">
+                        Contact us on : <a href="mailto:julishajoby@gmail.com" class="footer-contact-email">julishajoby@gmail.com</a>
+                    </p>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html" class="footer-nav-link">Home</a></li>
+                        <li><a href="about.html" class="footer-nav-link">About</a></li>
+                        <li><a href="spamchecker.html" class="footer-nav-link">Spam Checker</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <hr class="footer-divider">
+            <p class="footer-copyright">© 2025 Spamsparx. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
 </html>
+
+
